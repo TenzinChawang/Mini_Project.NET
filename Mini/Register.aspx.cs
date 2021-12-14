@@ -25,21 +25,26 @@ namespace Mini
         protected void Button1_Click1(object sender, EventArgs e)
         {
             con.Open();
+           
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql;
 
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            String sql;
-
-            sql = "insert into Login(username,password) values( '" + TextBox1.Text + "' ,'" + TextBox2.Text + "')"; 
-
-
-            command = new SqlCommand(sql, con);
-            adapter.InsertCommand = new SqlCommand(sql, con);
-            adapter.InsertCommand.ExecuteNonQuery();
+                sql = "insert into Login(username,password) values( '" + TextBox1.Text + "' ,'" + TextBox2.Text + "')";
 
 
-            command.Dispose();
-            con.Close();
+                command = new SqlCommand(sql, con);
+                adapter.InsertCommand = new SqlCommand(sql, con);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                con.Close();
+            Label4.Text = "Successfully registered new user ";
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PageLogin.aspx");
+
         }
     }
 }

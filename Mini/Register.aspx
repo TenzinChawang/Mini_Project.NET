@@ -20,7 +20,8 @@
 <body>
     <form id="form1" runat="server">
         <div style="text-align:center;color:darkslateblue" >
-           <h1>Register Page</h1> </div>
+           <h1>Register Page <pre style="float:right"><asp:Button ID="Button2" runat="server" BorderColor="Red" ForeColor="Red" Text="X" Width="30px" OnClick="Button2_Click" /> </pre>
+            </h1> </div>
     <table class="auto-style1" style="text-align:center;align-items:center; ">
         <tr>
             <td>
@@ -57,8 +58,15 @@
         <div class="auto-style2">
         </div>
         <p style="align-items:center;align-content:center;align-self:center;" class="auto-style2">
-            <asp:Button ID="Button1" runat="server" Text="Create New User" BackColor="#0066FF" Font-Bold="True" OnClick="Button1_Click1" BorderColor="Black" />
+            <asp:Button ID="Button1" runat="server" Text="Create New User" BackColor="#0066FF" Font-Bold="True" OnClick="Button1_Click1" />
+        </p>
+        <p class="auto-style2" style="align-items: center; align-content: center; align-self: center">
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label4" runat="server"></asp:Label>
         </p>
     </form>
+    <p class="auto-style2" style="align-items: center; align-content: center; align-self: center">
+&nbsp;&nbsp;&nbsp;
+    </p>
     </body>
 </html>

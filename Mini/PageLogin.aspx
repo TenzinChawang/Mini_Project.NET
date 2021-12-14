@@ -41,7 +41,7 @@
                 </td>
                 <td class="auto-style7">
 
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Enter correct username" ForeColor="Red" ControlToValidate="username"></asp:RequiredFieldValidator>
+                    <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
 
                 </td>
             </tr>
@@ -52,7 +52,7 @@
                 </td>
                  <td>
 
-                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Enter password again" ForeColor="Red" ControlToValidate="password"></asp:RequiredFieldValidator>
+                     <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
 
                 </td>
                
@@ -65,6 +65,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button2_Click" />
         </p>
+       
+        <p>
+            &nbsp;</p>
        
     </form>
     </body>

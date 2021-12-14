@@ -25,19 +25,45 @@ namespace Mini
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            int x = Int32.Parse(q1.Text);
-            int y = Int32.Parse(q2.Text);
-            int z = Int32.Parse(q3.Text);
-            int tax = 65;
-            Tax.Text = "Rs." + tax.ToString()+".00";
+           
             
-            int Total1 = x * 400 + y * 600 + z * 500 + tax;
-            Total.Text = "Rs." + Total1.ToString()+".00";
-
             con.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
             String sql;
+            String invent;
+            invent ="Update inventory SET quantity ='" + q1.Text + "' WHERE PID = 101";
+            command = new SqlCommand(invent, con);
+            adapter.InsertCommand = new SqlCommand(invent, con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            invent = "Update inventory SET quantity ='" + q2.Text + "' WHERE PID = 102";
+            command = new SqlCommand(invent, con);
+            adapter.InsertCommand = new SqlCommand(invent, con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            invent = "Update inventory SET quantity ='" + q3.Text + "' WHERE PID = 103";
+            command = new SqlCommand(invent, con);
+            adapter.InsertCommand = new SqlCommand(invent, con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+
+            command = new SqlCommand(invent, con);
+            adapter.InsertCommand = new SqlCommand(invent, con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+
+            int x = Int32.Parse(q1.Text);
+            int y = Int32.Parse(q2.Text);
+            int z = Int32.Parse(q3.Text);
+            int tax = 65;
+            Tax.Text = "Rs." + tax.ToString() + ".00";
+
+            int Total1 = x * 400 + y * 600 + z * 500 + tax;
+            Total.Text = "Rs." + Total1.ToString() + ".00";
+
+
+
 
             sql = "insert into product(total) values( '" + Total.Text +  "' ) ";
 
@@ -65,8 +91,6 @@ namespace Mini
 
         protected void Buy_Click(object sender, EventArgs e)
         {
-            
-
             Response.Redirect("Buy.aspx");
         }
 
@@ -77,7 +101,7 @@ namespace Mini
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm2.aspx");
+            Response.Redirect("PageLogin.aspx");
         }
     }
 }

@@ -62,7 +62,7 @@
         </div>
         <div class="auto-style5" style="text-align:center;">
             <br />
-            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <asp:Label ID="Label3" runat="server" ForeColor="Red"></asp:Label>
         </div>
           </form>
 </body>

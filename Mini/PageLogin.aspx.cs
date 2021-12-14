@@ -21,10 +21,12 @@ namespace Mini
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
             con.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            //String sql;
+
+            
             String cuser;
             cuser ="SELECT count(*) from Login WHERE username ='"+ username.Text + "'";
             command = new SqlCommand(cuser, con);
@@ -39,30 +41,35 @@ namespace Mini
                 string PASS = command.ExecuteScalar().ToString();
                 if(PASS == password.Text)
                 {
-                    Session["New"] = username.Text;
+                   // Session["New"] = username.Text;
+                   
                     Response.Write("Password is correct");
                     Response.Redirect("Main.aspx");
                 }
-                else 
+                else
                 {
-                    Response.Write("Password is not correct");
+                   
+                        Label2.Text = "*Password is not correct";
+                        Label1.Text = "";
+                    
+
+                   
                 }
                
             }
+
             else
-            {
-                Response.Write("Username is not correct");
+            { 
+
+                Label1.Text = "*Username incorrect";
             }
 
-           // sql = "SELECT * FROM Login WHERE username='" + username.Text + "' " +
-               // "AND password ='" + password.Text + "'";
-            
-           
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Register.aspx");
         }
     }
 }

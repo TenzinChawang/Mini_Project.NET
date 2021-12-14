@@ -54,7 +54,7 @@ namespace Mini
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm2.aspx");
+            Response.Redirect("PageLogin.aspx");
         }
     }
 }
